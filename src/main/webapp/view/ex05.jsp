@@ -9,6 +9,9 @@
 	.f_red{color:red;}
 	.f_orange{color:orange;}
 	.f_silver{color:silver;}
+	p{
+		text-decoration: none;
+	}
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script></script>
 <script type="text/javascript">
@@ -16,10 +19,15 @@
 		//요소 [속성] : 해당 속성이 있는 요소 선택
 		$("a[href]").addClass("f_silver");
 		//요소 [속성=값] : 해당 속성의 값이 일치하는 요소
-		$("a[href='https://www.daum.net']").addClass("f_red");
+		$("a[href='https://www.daum.net']").removeClass("f_silver").addClass("f_orange");
 		//요소 [속성^=값] : 해당 속성의 값이 시작하는 요소
+		$("a[href^='mailto']").removeClass("f_silver").addClass("f_green").css("text-decoration","none");
 		//요소 [속성*=값] : 해당 속성의 값이 포함하는 요소
+		$("a[href*='www']").removeClass("f_silver").addClass("f_red");
+		
 		//요소 [속성$=값] : 해당 속성의 값이 끝나는 요소
+		$("a[href$='net']").removeClass("f_silver").addClass("f_skyblue");
+		
 	});
 </script>
 </head>
